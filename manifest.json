@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "NYT Crossword Dark Mode",
-    "version": "1.0",
+    "version": "1.1",
     "description": "Adds a dark mode to the New York Times Crossword page",
     "icons": {
         "16": "images/icon-16.png",
@@ -16,5 +16,9 @@
                 "https://www.nytimes.com/crosswords/game/*"
             ]
         }
-    ]
+    ],
+    "action": {
+        "default_popup": "popup/popup.html",
+        "default_icon": "popup/popup-icon.png"
+    }
 }

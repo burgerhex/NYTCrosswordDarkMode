@@ -1,7 +1,5 @@
 // language=CSS (injection comment for WebStorm)
 const styleText = `
-
-
     .xwd__cell--cell {
         fill: #121212;
     }
@@ -249,6 +247,8 @@ const styleText = `
             color of border below header
             hamburger button becomes solid on click
             exchange svg files for raw paths so they're colorable (https://stackoverflow.com/q/11529470/8673320)
+            intersection of related and selected
+            shaded (and intersection of shaded and selected) (ex. 7/3/2023)
         TODO: new features:
             popup with color selection - selection color, highlighted color, related color, block color 
     */

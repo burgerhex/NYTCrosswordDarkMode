@@ -1,0 +1,102 @@
+.Popup {
+    background-color: #202020;
+    width: 800px;
+    height: 600px;
+}
+
+.InnerPopup {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: black 4px solid;
+    margin: 0 auto;
+    padding: 2%;
+    box-sizing: border-box;
+}
+
+.PopupTitle {
+    color: #ededed;
+    display: inline-block;
+    font-size: xx-large;
+}
+
+.PopupLabel {
+    color: #ededed;
+    display: inline-block;
+    font-size: medium;
+}
+
+.PresetLabel {
+    font-weight: bold;
+    font-size: large;
+    margin-right: 5px;
+}
+
+.PopupColorLabel {
+    margin-left: 3px;
+}
+
+.PopupColumnLabel {
+    color: #ededed;
+    display: block;
+    font-size: large;
+    margin-bottom: 10px;
+}
+
+.PopupColumns {
+    overflow: auto;
+    margin: 20px 0;
+}
+
+.PopupLeftColumn {
+    width: 50%;
+    float: left;
+}
+
+.PopupRightColumn {
+    width: 50%;
+    float: right;
+}
+
+.PopupApplied {
+    opacity: 0;
+    color: #00dd00;
+    display: inline-block;
+    font-size: medium;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.PopupApplied.visible {
+    opacity: 1;
+    animation: fade-out 0.5s linear forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.PopupLogo {
+    float: right;
+}
+
+.PopupOption {
+    color: #ededed;
+    font-size: medium;
+    margin: 10px 0;
+}
+
+.PopupSave {
+    margin: 20px 0;
+}
+
+.PopupHelpLabel {
+    display: block;
+    margin-top: 20px;
+}

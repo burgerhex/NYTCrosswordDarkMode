@@ -88,6 +88,7 @@ const styleText = (options) => {
     const clueBarC = options.clueBarBackgroundColor;
     const cellC = options.cellColor;
     const cellTextC = options.cellTextColor;
+    const cellCheckTextC = options.cellCheckTextColor;
     // const pencilC = `color-mix(in srgb, ${mainC} 58%, ${textC})`;
     const pencilC = blend(mainC, 58, textC);
     const blockC = options.blockCellColor;
@@ -216,11 +217,11 @@ const styleText = (options) => {
         /*    }*/
         /*}*/
 
-        /*.xwd__assistance--confirmed {*/
-        /*    ~ text:last-of-type {*/
-        /*        fill: $blue2;*/
-        /*    }*/
-        /*}*/
+        .xwd__assistance--confirmed {
+            ~ text:last-of-type {
+                fill: ${cellCheckTextC};
+            }
+        }
 
         /* ClueBar/ClueBarDesktop.scss */
         .xwd__clue-bar-desktop--bar {

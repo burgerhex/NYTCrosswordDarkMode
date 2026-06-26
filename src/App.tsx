@@ -15,6 +15,7 @@ class ColorOptions {
   // stuff in the crossword
   cellColor: string = "#ffffff";
   cellTextColor: string = "#000000";
+  cellCheckTextColor: string = "#0080FC";
   blockCellColor: string = "#000000";
   selectedCellColor: string = "#ffda00";
   highlightedCellColor: string = "#a7d8ff";
@@ -30,6 +31,7 @@ const darkModeOptions = {
   clueBarBackgroundColor: "#2c0d52",
   cellColor: "#121212",
   cellTextColor: "#ededed",
+  cellCheckTextColor: "#0080FC",
   blockCellColor: "#d0d0d0",
   selectedCellColor: "#712ec1",
   highlightedCellColor: "#3c146c",
@@ -44,6 +46,7 @@ const fallThemeOptions = {
   clueBarBackgroundColor: "#ffe4b5",
   cellColor: "#f5f0e0",
   cellTextColor: "#000000",
+  cellCheckTextColor: "#0080FC",
   blockCellColor: "#800000",
   selectedCellColor: "#ffbb00",
   highlightedCellColor: "#ffd700",
@@ -57,6 +60,7 @@ const winterThemeOptions = {
   clueBarBackgroundColor: "#d9d9ff",
   cellColor: "#f0f0ff",
   cellTextColor: "#000000",
+  cellCheckTextColor: "#0080FC",
   blockCellColor: "#000080",
   selectedCellColor: "#00ffff",
   highlightedCellColor: "#80dfff",
@@ -70,6 +74,7 @@ const springThemeOptions = {
   clueBarBackgroundColor: "#d9ffd9",
   cellColor: "#f2f5f0",
   cellTextColor: "#000000",
+  cellCheckTextColor: "#0080FC",
   blockCellColor: "#009600",
   selectedCellColor: "#90ee90",
   highlightedCellColor: "#adffad",
@@ -83,6 +88,7 @@ const summerThemeOptions = {
   clueBarBackgroundColor: "#ffe4b5",
   cellColor: "#f8f8e0",
   cellTextColor: "#000000",
+  cellCheckTextColor: "#0080FC",
   blockCellColor: "#a8a800",
   selectedCellColor: "#ffff00",
   highlightedCellColor: "#ffff80",
@@ -212,6 +218,12 @@ function App() {
               <input type="color" value={colorOptions.cellTextColor}
                      onChange={(e) => setColorOptions({...colorOptions, cellTextColor: e.target.value})}/>
               <span className="PopupColorLabel">Cell Text Color</span>
+            </div>
+
+            <div className="PopupOption">
+              <input type="color" value={colorOptions.cellCheckTextColor}
+                     onChange={(e) => setColorOptions({...colorOptions, cellCheckTextColor: e.target.value})}/>
+              <span className="PopupColorLabel">Cell Check Text Color</span>
             </div>
 
             <div className="PopupOption">

@@ -15,7 +15,7 @@ class ColorOptions {
   // stuff in the crossword
   cellColor: string = "#ffffff";
   cellTextColor: string = "#000000";
-  cellCheckTextColor: string = "#0080FC";
+  cellCheckTextColor: string = "#2860d8";
   blockCellColor: string = "#000000";
   selectedCellColor: string = "#ffda00";
   highlightedCellColor: string = "#a7d8ff";
@@ -31,7 +31,7 @@ const darkModeOptions = {
   clueBarBackgroundColor: "#2c0d52",
   cellColor: "#121212",
   cellTextColor: "#ededed",
-  cellCheckTextColor: "#0080FC",
+  cellCheckTextColor: "#2860d8",
   blockCellColor: "#d0d0d0",
   selectedCellColor: "#712ec1",
   highlightedCellColor: "#3c146c",
@@ -46,7 +46,7 @@ const fallThemeOptions = {
   clueBarBackgroundColor: "#ffe4b5",
   cellColor: "#f5f0e0",
   cellTextColor: "#000000",
-  cellCheckTextColor: "#0080FC",
+  cellCheckTextColor: "#2860d8",
   blockCellColor: "#800000",
   selectedCellColor: "#ffbb00",
   highlightedCellColor: "#ffd700",
@@ -60,7 +60,7 @@ const winterThemeOptions = {
   clueBarBackgroundColor: "#d9d9ff",
   cellColor: "#f0f0ff",
   cellTextColor: "#000000",
-  cellCheckTextColor: "#0080FC",
+  cellCheckTextColor: "#2860d8",
   blockCellColor: "#000080",
   selectedCellColor: "#00ffff",
   highlightedCellColor: "#80dfff",
@@ -74,7 +74,7 @@ const springThemeOptions = {
   clueBarBackgroundColor: "#d9ffd9",
   cellColor: "#f2f5f0",
   cellTextColor: "#000000",
-  cellCheckTextColor: "#0080FC",
+  cellCheckTextColor: "#2860d8",
   blockCellColor: "#009600",
   selectedCellColor: "#90ee90",
   highlightedCellColor: "#adffad",
@@ -88,7 +88,7 @@ const summerThemeOptions = {
   clueBarBackgroundColor: "#ffe4b5",
   cellColor: "#f8f8e0",
   cellTextColor: "#000000",
-  cellCheckTextColor: "#0080FC",
+  cellCheckTextColor: "#2860d8",
   blockCellColor: "#a8a800",
   selectedCellColor: "#ffff00",
   highlightedCellColor: "#ffff80",
@@ -123,7 +123,12 @@ function App() {
       setPresetName(storedPresetName ?? presetName);
 
       let storedColors = result.options?.colors;
-      setColorOptions(storedColors ?? defaultColorOptions);
+      if (storedColors) {
+        let mergedColors = {...defaultColorOptions, ...storedColors};
+        setColorOptions(mergedColors);
+      } else {
+        setColorOptions(defaultColorOptions);
+      }
 
       let storedPreset = result.options?.customPreset;
       let newPreset = new ColorOptions();
@@ -223,7 +228,7 @@ function App() {
             <div className="PopupOption">
               <input type="color" value={colorOptions.cellCheckTextColor}
                      onChange={(e) => setColorOptions({...colorOptions, cellCheckTextColor: e.target.value})}/>
-              <span className="PopupColorLabel">Cell Check Text Color</span>
+              <span className="PopupColorLabel">Checked Cell Text Color</span>
             </div>
 
             <div className="PopupOption">
@@ -290,7 +295,7 @@ function App() {
 
         <span className="PopupLabel">Changed options will be applied after 1 second.</span>
         <span className="PopupLabel PopupHelpLabel">Problem?&nbsp;
-        <a target="_blank" href="https://github.com/burgerhex/NYTCrosswordDarkMode/issues/new" rel="noreferrer">
+          <a target="_blank" href="https://github.com/burgerhex/NYTCrosswordDarkMode/issues/new" rel="noreferrer">
             Report here!
           </a>
         </span>

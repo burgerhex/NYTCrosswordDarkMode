@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "NYT Crossword Dark Mode",
-    "version": "2.1",
+    "version": "2.2",
     "description": "Adds a dark mode to the New York Times Crossword page",
     "icons": {
         "16": "images/icon-16.png",
